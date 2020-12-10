@@ -1,0 +1,47 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "customer",
+      "otherEntityName": "customer",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "custid",
+      "otherEntityRelationshipName": "custOrder"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "custorderid",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "custid",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "custorddesc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "custordcost",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "custordpaid",
+      "fieldType": "Float"
+    }
+  ],
+  "changelogDate": "20201206043813",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "cust_order",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

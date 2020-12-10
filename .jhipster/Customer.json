@@ -1,0 +1,47 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "custOrder",
+      "otherEntityName": "custOrder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "customer"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "custid",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "custname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "75"
+    },
+    {
+      "fieldName": "custemail",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "custphone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "custaddress",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    }
+  ],
+  "changelogDate": "20201206040551",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "customer",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

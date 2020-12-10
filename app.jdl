@@ -1,0 +1,33 @@
+
+application {
+  config {
+    baseName seamstressapp,
+    applicationType monolith,
+    packageName com.bowerstechnologies.seamstressapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Customer {
+    custid UUID required, unique
+    name String required
+    email String
+    phone String 
+    address String
+}
+
+entity Order {
+    orderid UUID required, unique
+    custid UUID
+    description String
+    totcost Float
+    totpaid Float
+}
+
+relationship OneToMany {
+  Customer to Order
+}
+    

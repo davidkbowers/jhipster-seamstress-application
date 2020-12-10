@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="custOrder">
+            <h2><span>Cust Order</span> {{ custOrder.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Custorderid</span></dt>
+                <dd>
+                    <span>{{ custOrder.custorderid }}</span>
+                </dd>
+                <dt><span>Custid</span></dt>
+                <dd>
+                    <span>{{ custOrder.custid }}</span>
+                </dd>
+                <dt><span>Custorddesc</span></dt>
+                <dd>
+                    <span>{{ custOrder.custorddesc }}</span>
+                </dd>
+                <dt><span>Custordcost</span></dt>
+                <dd>
+                    <span>{{ custOrder.custordcost }}</span>
+                </dd>
+                <dt><span>Custordpaid</span></dt>
+                <dd>
+                    <span>{{ custOrder.custordpaid }}</span>
+                </dd>
+                <dt><span>Customer</span></dt>
+                <dd>
+                    <div *ngIf="custOrder.customer">
+                        <a [routerLink]="['/customer', custOrder.customer?.id, 'view']">{{ custOrder.customer?.custid }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cust-order', custOrder.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
