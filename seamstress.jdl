@@ -1,0 +1,59 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName jhipsterSeamstressApplication
+    buildTool maven
+    cacheProvider no
+    clientFramework angularX
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1607223148905
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache false
+    enableSwaggerCodegen false
+    enableTranslation false
+    jhiPrefix jhi
+    jhipsterVersion "6.10.5"
+    jwtSecretKey "YjdiOTc2MWVjNWIxMmExM2M5YmRhYWNkZWFkY2ZlY2NhYTEyOTNmZTExNTEwMjViNjk5ZWQ3ODhiZTJiYTM3NDBmNjc5ZjJmYzgyMjBiYjAzZTcwNjg1YzIwYWJjN2UwZTJiYzk3YzUzMGEzNjJjNWY5ZTk2MmZiMDc2OWM4NTk="
+    languages [en]
+    messageBroker false
+    nativeLanguage en
+    otherModules []
+    packageName com.bowerstechnologies.seamstressapp
+    prodDatabaseType mysql
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks []
+    useSass true
+    websocket false
+  }
+
+  entities CustOrder, Customer
+}
+
+entity CustOrder {
+  custorderid UUID required unique,
+  custid UUID,
+  custorddesc String required maxlength(1000),
+  custordcost Float,
+  custordpaid Float
+}
+entity Customer {
+  custid UUID,
+  custname String required unique maxlength(75),
+  custemail String,
+  custphone String,
+  custaddress String
+}
+relationship OneToMany {
+  Customer to CustOrder{customer(custname)}
+}
+paginate CustOrder, Customer with pagination

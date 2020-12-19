@@ -5,7 +5,7 @@
     "baseName": "jhipsterSeamstressApplication",
     "packageName": "com.bowerstechnologies.seamstressapp",
     "packageFolder": "com/bowerstechnologies/seamstressapp",
-    "serverPort": 8080,
+    "serverPort": "8080",
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
@@ -37,9 +37,13 @@
     "otherModules": [],
     "blueprints": [],
     "prettierJava": true,
-    "lastLiquibaseTimestamp": 1607229493000
+    "lastLiquibaseTimestamp": 1607229493000,
+    "skipUserManagement": false,
+    "skipClient": false,
+    "skipServer": false
   },
   "git-provider": "GitHub",
   "git-company": "davidkbowers",
-  "repository-name": "jhipster-seamstress-application"
+  "repository-name": "jhipster-seamstress-application",
+  "entities": ["CustOrder", "Customer"]
 }

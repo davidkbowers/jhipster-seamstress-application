@@ -3,10 +3,10 @@
   "clientRootFolder": "",
   "relationships": [
     {
-      "relationshipName": "custOrder",
-      "otherEntityName": "custOrder",
       "relationshipType": "one-to-many",
-      "otherEntityRelationshipName": "customer"
+      "otherEntityName": "custOrder",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custOrder"
     }
   ],
   "fields": [
@@ -17,13 +17,12 @@
     {
       "fieldName": "custname",
       "fieldType": "String",
-      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRules": ["required", "unique", "maxlength"],
       "fieldValidateRulesMaxlength": "75"
     },
     {
       "fieldName": "custemail",
-      "fieldType": "String",
-      "fieldValidateRules": []
+      "fieldType": "String"
     },
     {
       "fieldName": "custphone",
@@ -31,8 +30,7 @@
     },
     {
       "fieldName": "custaddress",
-      "fieldType": "String",
-      "fieldValidateRules": []
+      "fieldType": "String"
     }
   ],
   "changelogDate": "20201206040551",
@@ -43,5 +41,8 @@
   "databaseType": "sql",
   "readOnly": false,
   "jpaMetamodelFiltering": false,
-  "pagination": "pagination"
+  "pagination": "pagination",
+  "name": "Customer",
+  "embedded": false,
+  "applications": ["jhipsterSeamstressApplication"]
 }

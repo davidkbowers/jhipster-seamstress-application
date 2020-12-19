@@ -26,7 +26,7 @@ public class Customer implements Serializable {
 
     @NotNull
     @Size(max = 75)
-    @Column(name = "custname", length = 75, nullable = false)
+    @Column(name = "custname", length = 75, nullable = false, unique = true)
     private String custname;
 
     @Column(name = "custemail")

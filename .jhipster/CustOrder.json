@@ -3,11 +3,11 @@
   "clientRootFolder": "",
   "relationships": [
     {
-      "relationshipName": "customer",
-      "otherEntityName": "customer",
       "relationshipType": "many-to-one",
-      "otherEntityField": "custid",
-      "otherEntityRelationshipName": "custOrder"
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "custOrder",
+      "relationshipName": "customer",
+      "otherEntityField": "custname"
     }
   ],
   "fields": [
@@ -43,5 +43,8 @@
   "databaseType": "sql",
   "readOnly": false,
   "jpaMetamodelFiltering": false,
-  "pagination": "pagination"
+  "pagination": "pagination",
+  "name": "CustOrder",
+  "embedded": false,
+  "applications": ["jhipsterSeamstressApplication"]
 }

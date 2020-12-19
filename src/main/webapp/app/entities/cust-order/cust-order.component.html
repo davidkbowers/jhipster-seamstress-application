@@ -28,7 +28,7 @@
                     <th scope="col"  jhiSortBy="custorddesc"><span>Custorddesc</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="custordcost"><span>Custordcost</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="custordpaid"><span>Custordpaid</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="customer.custid"><span>Customer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="customer.custname"><span>Customer</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -42,7 +42,7 @@
                     <td>{{ custOrder.custordpaid }}</td>
                     <td>
                         <div *ngIf="custOrder.customer">
-                            <a [routerLink]="['/customer', custOrder.customer?.id, 'view']" >{{ custOrder.customer?.custid }}</a>
+                            <a [routerLink]="['/customer', custOrder.customer?.id, 'view']" >{{ custOrder.customer?.custname }}</a>
                         </div>
                     </td>
                     <td class="text-right">

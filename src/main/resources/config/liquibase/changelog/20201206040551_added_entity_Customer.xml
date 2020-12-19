@@ -20,7 +20,7 @@
                 <constraints nullable="true" />
             </column>
             <column name="custname" type="varchar(75)">
-                <constraints nullable="false" />
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_customer_custname" />
             </column>
             <column name="custemail" type="varchar(255)">
                 <constraints nullable="true" />
